@@ -1,8 +1,9 @@
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
-int main(vector<int> arr){
+int add(vector<int> arr){
 
     int sum = 0;
 
@@ -23,5 +24,28 @@ int multiply(vector<int> arr){
     }
 
     return product;
+
+}
+
+int main(){
+    
+    vector<int> nums;
+    int index = 0;
+    int entry;
+
+    cout << "Enter Numbers. Sum and Product will be computed when 0 is entered" << endl;
+
+    cin >> entry;
+
+    while (entry != 0){
+        nums[index] = entry;
+        index += 1;
+        cin >> entry;
+    }
+    
+    cout << "Sum: " + add(nums) << endl;
+    cout << "Product: " + multiply(nums) << endl;
+
+    return 0;
 
 }
