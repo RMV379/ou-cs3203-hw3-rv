@@ -27,6 +27,22 @@ int multiply(vector<int> arr){
 
 }
 
+vector<int> reverse(vector<int> arr){
+
+    int size = arr.size();
+    int start;
+    int end;
+    
+    for (int i = 0; i < size/2; ++i){
+        start = arr[i];
+        end = arr[(size - 1 - i)];
+        arr[i] = end;
+        arr[(size - 1 -i)] = start;
+    }
+
+    return arr;
+}
+
 int main(){
     
     vector<int> nums;
