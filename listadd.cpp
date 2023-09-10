@@ -27,13 +27,29 @@ int multiply(vector<int> arr){
 
 }
 
+vector<int> reverse(vector<int> arr){
+
+    int size = arr.size();
+    int start;
+    int end;
+    
+    for (int i = 0; i < size/2; ++i){
+        start = arr[i];
+        end = arr[(size - 1 - i)];
+        arr[i] = end;
+        arr[(size - 1 -i)] = start;
+    }
+
+    return arr;
+}
+
 int main(){
     
     vector<int> nums;
     int index = 0;
     int entry;
 
-    cout << "Enter Numbers. Sum and Product will be computed when 0 is entered" << endl;
+    cout << "Enter Numbers. Sum, Product, and Reverse will be computed when 0 is entered" << endl;
 
     cin >> entry;
 
@@ -45,6 +61,11 @@ int main(){
     
     cout << "Sum: " + add(nums) << endl;
     cout << "Product: " + multiply(nums) << endl;
+    
+    vector<int> rev = reverse(nums);
+    for (int i = 0; i < nums.size(); ++i){
+        cout << rev[i];
+    }
 
     return 0;
 
